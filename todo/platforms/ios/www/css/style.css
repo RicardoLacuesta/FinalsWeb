@@ -1,0 +1,71 @@
+/* Empty. Add your own CSS if you likeion */
+
+
+.bar-balanced {
+	box-shadow: 0px 5px 5px gray;
+}
+.card.list{
+	border-top-right-radius: 20px !important;
+	border-top-left-radius: 20px !important;
+
+}
+.item-avater-left{
+	border-top-right-radius: 20px !important;
+	border-top-left-radius: 20px !important;
+
+}
+
+.sidecontent{
+	background: #636363;
+}
+
+.item.item-input input{
+	padding-bottom: 20px;
+}
+
+.botton .button{
+	background-color: white;
+}
+
+ion-content img{
+	width: 300px;
+	height: 300px;
+	margin-top: 30px;
+
+}
+.imglogo {
+	border-bottom: 1px solid #8EFF9E;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+hr {
+	color: #EAEAEA;
+}
+
+.blogconten img {
+	width: 1000px;
+	height: 1000px;
+}
+
+h4 {
+	font-weight: bold;
+}
+
+.contactinfo p {
+	padding: 10px;
+	border-bottom: 1px solid #EAEAEA;
+}
+
+.view-title{
+	font-weight: 	bold;
+}
+
+.scroll {
+    height: 100%;
+}
+ 
+#map {
+    width: 100%;
+    height: 100%;
+}

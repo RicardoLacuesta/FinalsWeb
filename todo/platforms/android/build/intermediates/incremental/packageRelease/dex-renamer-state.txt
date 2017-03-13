@@ -1,0 +1,4 @@
+#Mon Feb 06 01:07:08 PST 2017
+base.0=D\:\\webtech4\\todo\\platforms\\android\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\webtech4\\todo\\platforms\\android\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex

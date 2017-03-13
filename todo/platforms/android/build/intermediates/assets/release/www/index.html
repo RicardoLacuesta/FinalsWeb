@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Artsymomsy</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+   
+    <script src="js/app.js"></script>
+    <script src="cordova.js"></script>
+
+      <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAV5M_D39B_f_vKPUQVd4fP7OD36ipObUU'></script>
+  
+  </head>
+ <body ng-app="todo" class="platform-android platform-cordova platform-webview">
+
+
+  <ion-nav-bar class="bar-balanced">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+             
+    <ion-nav-view></ion-nav-view>
+
+
+
+
+
+    <script id="templates/tabs.html" type="text/ng-template">
+      <ion-tabs class="tabs-icon-top tabs-balanced">
+
+        <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Contact" icon="ion-ios-world" ui-sref="tabs.contact">
+          <ion-nav-view name="contact-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+      <ion-view view-title="Home">
+        <ion-content class="padding">
+          <div>
+    <center>
+      <img width="300" height="300" src="img/logo.png" alt="">
+           </center>
+             </div >
+             <div class="botton">
+         <center>
+            
+
+           <a class="button icon icon-left ion-android-cart balanced" href="#/tab/shop">Shop</a>
+
+           <a class="button icon icon-left ion-person balanced" href="#/tab/blog">Blog</a>
+           <a class="button icon icon-left ion-ios-telephone balanced" href="#/tab/cont">Contact</a>
+           <a class="button icon icon-left ion-location balanced" href="#/tab/direction">Direction</a>
+
+
+
+          </center>
+          </div>
+        </ion-content>
+      </ion-view>
+
+    </script>
+
+    <script id="templates/facts.html" type="text/ng-template">
+      <ion-view view-title="Facts">
+        <ion-content class="padding">
+          <p>Banging your head against a wall uses 150 calories an hour.</p>
+          <p>Dogs have four toes on their hind feet, and five on their front feet.</p>
+          <p>The ant can lift 50 times its own weight, can pull 30 times its own weight and always falls over on its right side when intoxicated.</p>
+          <p>A cockroach will live nine days without it's head, before it starves to death.</p>
+          <p>Polar bears are left handed.</p>
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <!-- SHOP PLACE -->
+    <script id="templates/shop.html" type="text/ng-template">
+      <ion-view view-title="Shop">
+        <ion-content class="padding">
+         <center>
+         <br>
+          <img src="img/shop/Canvas-Back-247x300.png">
+          <p class="balanced">Fabric Covered Cork Board DIY Kit</p>
+          <h4>$9.99–$12.99</h4>
+        <br>
+
+          <img src="img/shop/Blue-invisible-zipper-3.jpg">
+          <p class="balanced">Coats General Purpose Thread 1000 meters tubes</p>
+          <h4>$1.99–$2.49</h4>
+         <br>  
+         <img src="img/shop/300-meter-Thread-2-247x300.png">
+          <p class="balanced">Coats General Purpose Thread 1000 meters tubes</p>
+          <h4>$2.29–$4.99</h4>
+         
+          
+          <br> 
+          <img src="img/shop/white-invisible-zipper-3.jpg">
+          <p class="balanced">White Invisible Zippers</p>
+          <h4>$2.29–$4.99</h4>
+         <br>  
+          <img src="img/shop/Beige-invisible-zipper-2.jpg">
+          <p class="balanced">Beige Invisible Zippers</p>
+          <h4>$1.75–$4.99</h4> 
+        <br>  
+          <img src="img/shop/Black-invisible-zipper-1.jpg">
+          <p class="balanced">Black Invisible Zippers</p>
+          <h4>$1.75–$4.99</h4> 
+        <br>  
+          <img src="img/shop/Custom-Fabric-Covered-Cork-Board-back-Blue-247x300.png">
+          <p class="balanced">12×12 inch Custom Fabric Covered Cork Board</p>
+          <h4>$19.99</h4> 
+
+
+         </center>
+          
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <!-- BLOG PLACE -->
+     <script id="templates/blog.html" type="text/ng-template">
+      <ion-view view-title="Blog">
+        <ion-content class="padding"><center>
+ <br>       <ion-header >
+        <h1 class="title balanced">DIY How to Make a Fabric Covered Cork Board</h1>
+        <br>
+        </ion-header>
+        <hr>
+        <br>
+          <p>Posted on <label class="balanced">January 3, 2015</label> by <label class="balanced">artsymomsy</label></p>
+        
+           <img src="img/Custom-Fabric-Covered-Cork-Board-Black.png">
+        <br>  <br>
+        
+           
+                  
+         </center>
+        
+<p>Hi everyone! This is my very first blog post for my new website Artsy Momsy and my very first project for 2015! YAY!</p>
+          <p>I’ve always wanted to create fabric covered cork board because I do not want a boring cork board in my office and in my craft room. I always go for chic modern look.</p>
+          <center>
+   
+            <div>
+              <img src="img/DIY-fabric-covered-corkboard-tools-and-materials.png">
+          
+              <br>
+              <br>
+              </div>
+
+        <div>
+              
+              </center>
+                <p>Alright, before we start this project make sure that you have all the tools and materials that you will need.</p>
+                <p>1. 14″ x 14″ fabric of your choice. Upholstery fabric will be perfect!</p>
+                <p> 2. 12″ x 12″ canvas. This will be your framework.</p>
+                <p>3. 12″ x 12″ Cork Sheet</p>
+                <p>4. Staple Gun and wires</p>
+                <p> 5. Glue/ Glue Gun</p>
+                <p> 6. Pencil and Ruler</p>
+         </div>
+         <br>
+         <h4 class="balanced">BUY YOUR FABRIC COVERED CORKBOARD DIY KIT HERE</h4>
+
+           <p>
+           <br>
+           Now that you have everything ready, let’s move on to the first step.
+           <br><br>
+            <b>STEP 1:</b> Cut the Fabric
+            <br><br>
+            If you are using a fabric with a pattern that demands to be used assymmetrycally, measuring your fabric before cutting it is a must. Find your center, and measure 7″ from your center to top, to bottom and to each sides. See image below:
+
+         </p>
+         <center>
+         <br>
+         <div style="background-color: #E9E9E9;">
+           <img src="img/Cutting-the-Fabric.png">
+           <p style="color: #6D6D6D"><b>OPTIONAL:</b> Cut your fabric 1/2″ on 4 corners to make an easy fold.</p>
+         </div>
+
+         <br>
+         <div style="background-color: #E9E9E9;">
+           <img src="img/Cutting-the-Fabric-Front.png">
+           <p style="color: #6D6D6D">YAY! looks like I cut it perfectly :)</p>
+         </div>
+         </center>
+         <div>
+           <p>
+         <br>
+          <b> STEP 2: </b> Glue your 12″ x 12″ Cork Sheet on the canvas.
+          <br><br>
+          Make sure to cut excess cork sheets on the side when the glue is dry. You want the fabric to fit perfectly on the canvas.
+          </p>
+         </div>
+         <center>
+         <br>
+         <div style="background-color: #E9E9E9;">
+           <img src="img/Glue-cork-board-canvas.png">
+           <p style="color: #6D6D6D">TIP: If you are using rolled cork sheet, iron it first to flatten it. This will make your life easier when gluing it to the canvas.</p>
+         </div>
+
+
+         </center>
+
+         <div>
+         <center>
+           <img src="img/DIY-Fabric-Covered-Cork-Board-300x240.png">
+           <img src="img/DIY-Fabric-Covered-Cork-Board-2-300x240.png">
+           </center>
+           <p >
+           <br>
+           UPDATE: Glue gun is more effective than using liquid glue.
+           <br><br>
+          <b>STEP 3:</b> Now that you have the cork sheet on the canvas, it’s time to cover it with the fabric.
+            <br><br>
+          Lay your fabric up side down and put the canvas with the cork sheet over it.
+            <br><br>
+          Below are some photos to guide you with the stapling process:</p>
+         </div>
+
+
+         <center>
+         <br>
+         <div style="background-color: #E9E9E9;">
+           <img src="img/DIY-Fabric-Covered-Cork-Board-3.png">
+           <p style="color: #6D6D6D">I used push pins to hold the fabric centered on the canvas.</p>
+         </div>
+         <br>
+         <div style="background-color: #E9E9E9;">
+           <img src="img/IMG_20150211_111423-1024x1024.jpg">
+           <p style="color: #6D6D6D">NOW grab your staple gun and start on the sides.</p>
+         </div>
+
+        
+         </center>
+         <br>
+         <p>Let’s Start folding the corners. It’s like wrapping a gift :)</p>
+         
+          <div>
+          <center>
+           <img src="img/IMG_20150211_111511-300x300.jpg">
+           <img src="img/IMG_20150211_111522-300x300.jpg">
+           <img src="img/IMG_20150211_111536-300x300.jpg">
+           </center>
+           <p >
+           <br>
+           <center>
+            <div style="background-color: #E9E9E9;">
+           <img src="img/staple-fabric-on-canvas.png">
+           <p style="color: #6D6D6D">And we are done :)</p>
+         </div>
+         </center>
+          
+          
+
+         </div>
+         <br>
+         <p>Yay! How easy is that. We now have a modern chic fabric covered cork board. If you love this and you want to have one now, you can get yours at my <b class="balanced">Etsy Shop Here.</b></p>
+         <br><br>
+         <center>
+         <img src="img/Custom-Fabric-Covered-Cork-Board-side-Black-150x150.png">
+         <img src="img/Custom-Fabric-Covered-Cork-Board-close-up-Blue-150x150.png">
+         <img src="img/Custom-Fabric-Covered-Cork-Board-side-Blue-150x150.png">
+         <img src="img/Custom-Fabric-Covered-Cork-Board-Blue-150x150.png">
+         </center>
+
+         <hr>
+
+         <label><p>Posted in<i class="balanced"> DIY Projects, How Tos</i></p><p class="balanced">Leave a comment</p></label>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <!-- Contact PLACE -->
+    <script id="templates/cont.html" type="text/ng-template">
+      <ion-view view-title="Contact">
+        <ion-content class="padding">
+        <div class="contactinfo">
+          <h4 class="balanced">Artsy Momsy</h4>
+          <hr style="color:#EAEAEA;">
+         <label class="icon icon-right ion-ios-telephone-outline balanced"></label> <p > 0954 564 4521 </p>
+        <label class="icon icon-right ion-ios-location-outline balanced"></label> <p> 424 ambetstone Lane San Ramon CA 94582</p>
+          <label class="icon icon-right ion-ios-email-outline balanced"></label><p>email@email.com</p>
+           <label class="icon icon-right ion-android-globe balanced"></label>  <p> http://artsymomsy.com/</p>
+        </div>
+         
+        </ion-content>
+      </ion-view>
+    </script>
+
+
+
+    <!-- Direction PLACE -->
+    <script id="templates/direction.html" type="text/ng-template">
+       <ion-view view-title="Direction">
+        <ion-content class="padding">
+              <center>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.1972171608504!2d-121.90768802330582!3d37.76197364785856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fede3143a8943%3A0xfb014f55b601eea1!2sAmberstone+Ln%2C+San+Ramon%2C+CA+94582%2C+USA!5e0!3m2!1sen!2sph!4v1486311324819" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+           </center>
+        </ion-content>
+        </ion-view>
+    </script>
+
+    <script id="templates/facts2.html" type="text/ng-template">
+      <ion-view view-title="Also Factual">
+        <ion-content class="padding">
+          <p>111,111,111 x 111,111,111 = 12,345,678,987,654,321</p>
+          <p>1 in every 4 Americans has appeared on T.V.</p>
+          <p>11% of the world is left-handed.</p>
+          <p>1 in 8 Americans has worked at a McDonalds restaurant.</p>
+          <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
+          <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are present and don't die throughout the movie.</p>
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/about.html" type="text/ng-template">
+      <ion-view view-title="About">
+        <ion-content class="padding">
+        <center>
+           <h1>Lorem Ipsum</h1>
+
+           </center>
+           <br>
+           <h4>What is Lorem Ipsum?</h4>
+           <br><br>
+           <p><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+    <br><br>       
+    <h4>Why do we use it?</h4>
+    <br><br>
+
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </p>
+
+    <br><br>       
+    <h4>
+Where does it come from?</h4>
+    <br><br>
+
+    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+    </p>
+
+     <br><br>       
+    <h4>Where can I get some?</h4>
+    <br><br>
+
+    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    </p>
+
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/nav-stack.html" type="text/ng-template">
+      <ion-view view-title="Tab Nav Stack">
+        <ion-content class="padding">
+          <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/contact.html" type="text/ng-template">
+      <ion-view title="Contact">
+        <ion-content>
+          <div class="list">
+
+            <div class="item">
+             <h2 class="title balanced"><b>Artsy Momsy</b></h2>
+            
+            </div>
+            <div class="item">
+              <label class="icon icon-right ion-ios-telephone-outline balanced"></label> <p > 0954 564 4521 </p>
+            </div>
+            <div class="item">
+              <label class="icon icon-right ion-ios-location-outline balanced"></label> <p> 424 ambetstone Lane San Ramon CA 94582</p>
+            </div>
+            <div class="item">
+              <label class="icon icon-right ion-ios-email-outline balanced"></label><p>email@email.com</p>
+            </div>
+            <div class="item">
+              <label class="icon icon-right ion-android-globe balanced"></label>  <p> http://artsymomsy.com/</p>
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+
+
+
+
+
+</body>
+</html>
+
